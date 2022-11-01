@@ -1,6 +1,13 @@
 import { Module } from '@nestjs/common'
+import { MongooseModule } from '@nestjs/mongoose'
+import { TrackModule } from './track/track.module'
 
-@Module({})
-export class AppModule {
-
-}
+@Module({
+    imports: [
+        MongooseModule.forRoot(
+            'mongodb+srv://ilyasyzv:Yangurazov2002!@cluster0.dzhfpn2.mongodb.net/?retryWrites=true&w=majority',
+        ),
+        TrackModule,
+    ],
+})
+export class AppModule {}
